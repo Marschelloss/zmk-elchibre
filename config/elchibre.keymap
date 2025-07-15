@@ -44,7 +44,7 @@
 
         function {
             bindings = <
-                &trans    &kp F7 &kp F8 &kp F9 &kp F12          &trans &kp GRAVE &kp LPAR &kp RPAR &trans
+                &trans    &kp F7 &kp F8 &kp F9 &kp F12          &trans &kp GRAVE &kp LPAR &kp RPAR &bootloader
                 &kp LSHFT &kp F4 &kp F5 &kp F6 &kp F11          &trans &kp SQT   &trans   &kp LBRC &mt RSHIFT RBRC
                 &kp LCTRL &kp F1 &kp F2 &kp F3 &kp F10          &trans &kp NUBS  &trans   &kp LBKT &mt RCTRL RBKT
                               &trans         &trans             &trans         &trans
