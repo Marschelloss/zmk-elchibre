@@ -6,11 +6,13 @@
 &lt {
     tapping-term-ms = <120>;
     flavor = "balanced";
+    require-prior-idle-ms = <125>;
 };
 
 &mt {
     tapping-term-ms = <120>;
     flavor = "balanced";
+    require-prior-idle-ms = <100>;
 };
 
 / {
@@ -18,12 +20,12 @@
         compatible = "zmk,combos";
         combo_esc {
             timeout-ms = <27>;
-            key-positions = <0 1>;
+            key-positions = <12 13>;
             bindings = <&kp ESC>;
         };
         combo_enter {
             timeout-ms = <27>;
-            key-positions = <17 18>;
+            key-positions = <16 17>;
             bindings = <&kp ENTER>;
         };
     };
@@ -36,9 +38,9 @@
         qwerty {
             bindings = <
                 &kp TAB      &kp W  &kp E  &kp R    &kp T     &kp Y &kp U &kp I     &kp O      &kp P
-                &mt LSHIFT A &kp S  &kp D  &lt 3 F  &kp G     &kp H &kp J &kp K     &kp L      &mt RSHIFT SEMI
+                &mt LSHIFT A &kp S  &kp D  &kp F    &kp G     &kp H &kp J &kp K     &kp L      &mt RSHIFT BACKSPACE
                 &mt LCTRL Z  &kp X  &kp C  &kp V    &kp B     &kp N &kp M &kp COMMA &kp PERIOD &mt RCTRL SLASH
-                             &kp LALT         &lt 2 SPACE     &lt 1 BACKSPACE       &kp RWIN
+                             &mo 2         &mt LWIN SPACE     &kp LSHIFT            &mo 3
             >;
         };
 
@@ -53,19 +55,19 @@
 
         symbols {
             bindings = <
-                &kp Q         &kp N7 &kp N8 &kp N9 &kp EQUAL       &trans &kp GRAVE &kp LPAR &kp RPAR &trans
-                &mt LSHIFT N0 &kp N4 &kp N5 &kp N6 &kp MINUS       &trans &kp SQT   &kp LBRC &kp RBRC &kp RSHIFT
-                &kp KP_SLASH  &kp N1 &kp N2 &kp N3 &kp KP_DOT      &trans &kp NUBS  &kp LBKT &kp RBKT &kp RCTRL
-                                       &trans          &trans      &trans   &trans
+                &kp Q         &trans   &trans     &trans     &trans      &trans   &kp N1    &kp N2   &kp N3    &kp N4
+                &kp LGUI      &kp LALT &kp LCTL   &kp LSHIFT &kp TILDE   &kp LEFT &kp DOWN  &kp UP   &kp RIGHT &kp MINUS
+                &kp PLUS      &kp EQUAL &kp COMMA &kp DOT    &kp GRAVE   &trans   &kp N5    &kp N6   &kp N7    &kp N8
+                                        &trans    &trans                 &mt LSHIFT N9      &kp N0
             >;
         };
 
         navigation {
             bindings = <
-                &trans    &kp C_VOL_DN &kp C_VOL_UP &trans &trans          &kp INS   &kp HOME     &kp UP   &kp END   &trans
-                &kp LSHFT &kp C_PREV   &kp C_NEXT   &trans &trans          &kp PG_UP &kp LEFT     &kp DOWN &kp RIGHT &kp RSHFT
-                &kp LCTRL &trans       &trans       &trans &trans          &kp PG_DN &kp LC(LEFT) &trans   &kp LC(RIGHT)    &kp RCTRL
-                                       &trans              &kp DEL         &kp ENTER    &trans
+                &kp LBKT  &kp RBKT &kp LBRC  &kp RBRC   &trans          &bt BT_CLR_ALL &trans    &trans    &trans    &trans
+                &kp LGUI  &kp LALT &kp LCTRL &kp LSHIFT &trans          &bootloader    &bt BT(0) &bt BT(1) &bt BT(2) &kp DEL
+                &kp BSLH  &kp PIPE &kp LPRN  &kp RPRN   &trans          &trans         &trans    &trans    &trans    &trans
+                              &trans         &trans                     &trans         &trans
             >;
         };
     };
